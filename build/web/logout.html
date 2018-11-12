@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>Question Me</title> 
+<meta name="viewport" content="width=device-width, initial-scale=0">
+<style>
+body {
+  background-color: darkred;
+}
+h4{
+    color:yellow;
+    font-size:30px;
+}
+h1{
+    color:lightgreen;
+    font-size:40px;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #FFFF99;
+  width:70%;
+  margin:0 auto; 
+  border-radius:15px;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 12px 14px;
+  text-decoration: none;
+  font-size: 21px;
+}
+.topnav a:hover {
+  background-color: white;
+  color: black;
+}
+.topnav .login-container
+{
+    float:right;
+}
+.topnav .register-container
+{
+    float:right;
+}
+.topnav .register-container a:hover
+{
+  background-color: white;
+  color: black;
+}
+input[type=text]
+{
+    width: 30%;
+    padding:10px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 14px;
+    resize: vertical;
+}
+input[type=submit] {
+    background-color: lightseagreen;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 4px;
+    border:none;
+    cursor: pointer;
+}
+input[type=submit]:hover {
+    background-color: darkseagreen;
+}
+</style>
+</head>
+<body>
+<center><h1><i>Question Me</i></h1></center>
+<center><h4><i>Logged Out Successfully !!</i></h4></center>
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="About.html">About</a>
+  <a href="topic.html">Topics</a>
+  <a href="ContactUs.html">Contact Us</a>
+  <div class="login-container">
+      <a href="Login.html">Login</a>
+  </div>
+   <div class="register-container">
+      <a href="Register.html">Register</a>
+  </div>
+</div>
+<br>
+<center><form action="SearchServlet" method="post">
+        <input type="text" name="search" placeholder="Search topics here">
+        <input type="submit" value="Search">
+    </form></center>
+</html>

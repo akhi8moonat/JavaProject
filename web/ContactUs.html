@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title>Contact Us</title> 
+<meta name="viewport" content="width=device-width, initial-scale=0">
+<style>
+body {
+  background-color: darkred;
+}
+h1{
+    color:lightgreen;
+    font-size:40px;
+}
+.container h3
+{
+ text-align: center;
+ color:#000066;
+}
+p
+{
+     font-family:Times Roman; 
+     font-size:20px;
+     color:darkcyan;
+     text-align: center;
+}
+
+.container {
+  overflow: hidden;
+  background-color: #FFFF99;
+  width:60%;
+  margin:0 auto; 
+  padding:18px;
+  border-radius: 20px;
+}
+input[type=text],select{
+    width: 30%;
+    padding:12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 14px;
+    resize: vertical;
+}
+textarea {
+    width: 50%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+input[type=submit] {
+    background-color: lightseagreen;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 4px;
+    border:none;
+    align:center;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: darkcyan;
+}
+</style>
+    <body>
+        <center><h1><i>About</i></h1></center>
+        <div class="container">
+        
+            <p>
+                <b>For any queries related the application please feel free to drop a mail at questionMe@gmail.com</b>
+            </p>
+               <h3>Your Valuable Feedback Means Alot</h3>
+               <form action="feedbackServlet" method="post">
+                   <center><label for="fname">First Name</label></center>
+         <br>
+     <center> <input type="text" name="fname" placeholder="Enter your First Name" required></center>
+      <br>
+      <center><label for="lname">Last Name</label></center>
+       <br>
+       <center><input type="text" name="lname" placeholder="Enter your Last Name" required></center>
+      <br>
+                   <br>
+               <center><label for="subject">Subject</label></center>
+    <center><textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea></center>
+     <br>
+    <center><input type="submit" value="Submit"></center>
+               </form>
+        </div>
+        <br>
+    </body>
