@@ -25,35 +25,35 @@ import javax.servlet.http.HttpSession;
  *
  * @author Akhilesh
  */
-public class LoginServlet extends HttpServlet {
+public class forgotServlet extends HttpServlet {
 
      protected void doPost(HttpServletRequest request, HttpServletResponse response)  
                     throws ServletException, IOException {  
         response.setContentType("text/html");  
         PrintWriter out=response.getWriter();    
         String s1=request.getParameter("uname");  
-        String s2=request.getParameter("pwd");  
+        String s2=request.getParameter("ans");  
         try
         {
              String ss="jdbc:mysql://localhost:3306/registerdata";
             Class.forName("com.mysql.jdbc.Driver");
             Connection con=DriverManager.getConnection(ss,"root","");
             Statement s=con.createStatement();
-            String query="select * from register where username='"+s1+"' and password='"+s2+"'";
+            String query="select * from register where question='"+s1+"' and answer='"+s2+'"';
             ResultSet r=s.executeQuery(query);
             while(r.next())
             {
                 String u=r.getString("Username");
-                String p=r.getString("Password");
-                if(u.equals(s1) && p.equals(s2))
+                String a=r.getString("answer");
+                if(u.equals(s1) && a.equals(s2))
                 {
             RequestDispatcher rd=request.getRequestDispatcher("welc.html");  
             rd.forward(request, response);      
         }
                    // out.close();
             }
-            out.print("<body><center><b><font color='red'>Incorrect Username or Password</font></b></center></body>");
-                    RequestDispatcher rd=request.getRequestDispatcher("SignIn.html");  
+            out.print("<body><center><b><font color='red'>Incorrect Details Entered</font></b></center></body>");
+                    RequestDispatcher rd=request.getRequestDispatcher("Forgot.html");  
                     rd.include(request, response);    
                     //response.sendRedirect("Login.html");
         } catch (Exception ex) {

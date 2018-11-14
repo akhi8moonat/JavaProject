@@ -24,6 +24,14 @@
         <servlet-name>feedbackServlet</servlet-name>
         <servlet-class>Project.feedbackServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ForgotServlet</servlet-name>
+        <servlet-class>ForgotServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>forgotServlet</servlet-name>
+        <servlet-class>Project.forgotServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProjectServlet</servlet-name>
         <url-pattern>/ProjectServlet</url-pattern>
@@ -47,6 +55,14 @@
     <servlet-mapping>
         <servlet-name>feedbackServlet</servlet-name>
         <url-pattern>/feedbackServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ForgotServlet</servlet-name>
+        <url-pattern>/ForgotServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>forgotServlet</servlet-name>
+        <url-pattern>/forgotServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

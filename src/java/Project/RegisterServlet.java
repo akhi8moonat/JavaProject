@@ -12,6 +12,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -33,14 +34,19 @@ public class RegisterServlet extends HttpServlet {
         String username= req.getParameter("uname");
         String password= req.getParameter("pwd");
         String email= req.getParameter("eml");
+        String question= req.getParameter("que");
+        String answer= req.getParameter("ans");
         try {
             String ss="jdbc:mysql://localhost:3306/registerdata";
             Class.forName("com.mysql.jdbc.Driver");
             Connection con=DriverManager.getConnection(ss,"root","");
             Statement s=con.createStatement();
-                  String query="insert into register values('"+firstname+"','"+lastname+"',"+age+",'"+gender+"','"+username+"','"+password+"','"+email+"')";             
+                  String query="insert into register values('"+firstname+"','"+lastname+"',"+age+",'"+gender+"','"+username+"','"+password+"','"+email+"','"+question+"','"+answer+"')";             
                     int count=s.executeUpdate(query);
-                    out.println("registered successfully"); 
+                     out.print("<body><center><b><font color='blue'>Registered Successfully</font></b></center></body>");
+                    RequestDispatcher rd=req.getRequestDispatcher("index.html");  
+                    rd.include(req, res); 
+                    
         } catch (Exception ex ) {
             ex.getMessage();
         }

@@ -12,6 +12,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -36,7 +37,9 @@ public class feedbackServlet extends HttpServlet {
             Statement s=con.createStatement();
                   String query="insert into Feedback values('"+firstname+"','"+lastname+"','"+subject+"')";             
                     int count=s.executeUpdate(query);
-                    out.println("Thanks For your Feedback"); 
+                    out.print("<body><center><b><font color='blue'>Thanks for your Feedback</font></b></center></body>");
+                    RequestDispatcher rd=req.getRequestDispatcher("index.html");  
+                    rd.include(req, res);  
         } catch (Exception ex ) {
             ex.getMessage();
         }
