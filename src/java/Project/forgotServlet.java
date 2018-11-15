@@ -32,32 +32,26 @@ public class forgotServlet extends HttpServlet {
         response.setContentType("text/html");  
         PrintWriter out=response.getWriter();    
         String s1=request.getParameter("uname");  
-        String s2=request.getParameter("ans");  
-        try
-        {
-             String ss="jdbc:mysql://localhost:3306/registerdata";
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection(ss,"root","");
-            Statement s=con.createStatement();
-            String query="select * from register where question='"+s1+"' and answer='"+s2+'"';
-            ResultSet r=s.executeQuery(query);
-            while(r.next())
+        String s2=request.getParameter("ans");
+        Forgotpass f = new Forgotpass();
+         try {
+             String result = f.verify(s1, s2);
+            // out.println(result);
+            if(result.equals("login successfull"))
             {
-                String u=r.getString("Username");
-                String a=r.getString("answer");
-                if(u.equals(s1) && a.equals(s2))
-                {
-            RequestDispatcher rd=request.getRequestDispatcher("welc.html");  
-            rd.forward(request, response);      
-        }
-                   // out.close();
+                 RequestDispatcher r=request.getRequestDispatcher("welc.html");  
+                    r.include(request, response); 
             }
-            out.print("<body><center><b><font color='red'>Incorrect Details Entered</font></b></center></body>");
-                    RequestDispatcher rd=request.getRequestDispatcher("Forgot.html");  
-                    rd.include(request, response);    
-                    //response.sendRedirect("Login.html");
-        } catch (Exception ex) {
-               
-         }      
-    } 
+            else if(result.equals("not verified"))
+            {
+             out.print("<body><center><b><font color='red'>Incorrect Details</font></b></center></body>");
+             RequestDispatcher r=request.getRequestDispatcher("Forgot.html");  
+                    r.include(request, response);
+            }
+         } catch (ClassNotFoundException ex) {
+             Logger.getLogger(forgotServlet.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (SQLException ex) {
+             Logger.getLogger(forgotServlet.class.getName()).log(Level.SEVERE, null, ex);
+         }
          }  
+}

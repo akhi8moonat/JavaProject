@@ -32,6 +32,18 @@
         <servlet-name>forgotServlet</servlet-name>
         <servlet-class>Project.forgotServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PassServlet</servlet-name>
+        <servlet-class>Project.PassServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Session1</servlet-name>
+        <servlet-class>Project.Session1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Session2</servlet-name>
+        <servlet-class>Project.Session2</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProjectServlet</servlet-name>
         <url-pattern>/ProjectServlet</url-pattern>
@@ -63,6 +75,18 @@
     <servlet-mapping>
         <servlet-name>forgotServlet</servlet-name>
         <url-pattern>/forgotServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PassServlet</servlet-name>
+        <url-pattern>/PassServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Session1</servlet-name>
+        <url-pattern>/Session1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Session2</servlet-name>
+        <url-pattern>/Session2</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

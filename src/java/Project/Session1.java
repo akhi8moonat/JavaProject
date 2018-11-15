@@ -25,7 +25,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Akhilesh
  */
-public class LoginServlet extends HttpServlet {
+public class Session1 extends HttpServlet {
 
      protected void doPost(HttpServletRequest request, HttpServletResponse response)  
                     throws ServletException, IOException {  
@@ -45,16 +45,19 @@ public class LoginServlet extends HttpServlet {
             {
                 String u=r.getString("Username");
                 String p=r.getString("Password");
-                if(u.equals(s1) && p.equals(s2))
+                if(p.equals(s2))
                 {
-            RequestDispatcher rd=request.getRequestDispatcher("welc.html");  
-            rd.forward(request, response);      
+                    if(u.equals(s1))
+                    {
+                HttpSession se=request.getSession();
+                se.setAttribute("uname",s1);
+                 response.sendRedirect("welc.html");  
         }
-                   // out.close();
+                }
+                   
             }
             out.print("<body><center><b><font color='red'>Incorrect Username or Password</font></b></center></body>");
-                    RequestDispatcher rd=request.getRequestDispatcher("SignIn.html");  
-                    rd.include(request, response);    
+                    request.getRequestDispatcher("SignIn.html").include(request, response);    
                     //response.sendRedirect("Login.html");
         } catch (Exception ex) {
                
