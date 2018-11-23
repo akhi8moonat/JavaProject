@@ -39,14 +39,14 @@ public class forgotServlet extends HttpServlet {
             // out.println(result);
             if(result.equals("login successfull"))
             {
-                 RequestDispatcher r=request.getRequestDispatcher("welc.html");  
+                 RequestDispatcher r=request.getRequestDispatcher("welc.jsp");  
                     r.include(request, response); 
             }
             else if(result.equals("not verified"))
             {
-             out.print("<body><center><b><font color='red'>Incorrect Details</font></b></center></body>");
-             RequestDispatcher r=request.getRequestDispatcher("Forgot.html");  
+             RequestDispatcher r=request.getRequestDispatcher("Forgot.jsp");  
                     r.include(request, response);
+              out.print("<body><center><b><font color='red'>Incorrect Details</font></b></center></body>");       
             }
          } catch (ClassNotFoundException ex) {
              Logger.getLogger(forgotServlet.class.getName()).log(Level.SEVERE, null, ex);

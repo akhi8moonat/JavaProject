@@ -37,9 +37,9 @@ public class feedbackServlet extends HttpServlet {
             Statement s=con.createStatement();
                   String query="insert into Feedback values('"+firstname+"','"+lastname+"','"+subject+"')";             
                     int count=s.executeUpdate(query);
+                    RequestDispatcher rd=req.getRequestDispatcher("Home.jsp");  
+                    rd.include(req, res); 
                     out.print("<body><center><b><font color='blue'>Thanks for your Feedback</font></b></center></body>");
-                    RequestDispatcher rd=req.getRequestDispatcher("index.html");  
-                    rd.include(req, res);  
         } catch (Exception ex ) {
             ex.getMessage();
         }

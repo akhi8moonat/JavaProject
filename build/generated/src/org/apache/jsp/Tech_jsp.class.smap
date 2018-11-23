@@ -1,0 +1,14 @@
+SMAP
+Tech_jsp.java
+JSP
+*S JSP
+*F
++ 0 Tech.jsp
+Tech.jsp
++ 1 Header.jsp
+Header.jsp
+*L
+5,28:49
+1#1,49:77
+32#0,7:126
+*E

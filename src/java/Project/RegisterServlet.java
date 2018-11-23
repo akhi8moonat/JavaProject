@@ -43,10 +43,9 @@ public class RegisterServlet extends HttpServlet {
             Statement s=con.createStatement();
                   String query="insert into register values('"+firstname+"','"+lastname+"',"+age+",'"+gender+"','"+username+"','"+password+"','"+email+"','"+question+"','"+answer+"')";             
                     int count=s.executeUpdate(query);
-                     out.print("<body><center><b><font color='blue'>Registered Successfully</font></b></center></body>");
-                    RequestDispatcher rd=req.getRequestDispatcher("index.html");  
+                    RequestDispatcher rd=req.getRequestDispatcher("Home.jsp");  
                     rd.include(req, res); 
-                    
+                     out.print("<body><center><b><font color='blue'>Registered Successfully</font></b></center></body>");                 
         } catch (Exception ex ) {
             ex.getMessage();
         }

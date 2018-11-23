@@ -26,11 +26,11 @@ public class Session2 extends HttpServlet {
             PrintWriter out=response.getWriter();  
               
             
-            request.getRequestDispatcher("welc.html").include(request, response); 
+            request.getRequestDispatcher("welc.jsp").include(request, response); 
             HttpSession session=request.getSession();  
             session.invalidate();  
               
-             response.sendRedirect("Signout.html");  
+             response.sendRedirect("Signout.jsp");  
               
             out.close();     
     }
