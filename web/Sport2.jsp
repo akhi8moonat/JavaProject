@@ -69,7 +69,7 @@ a
     font-size:15px;
 }
     </style>
-    <%@include file="Header.jsp"%>
+    <%@include file="Header2.jsp"%>
     <body>
         <div class="tech">
         <h1><i>Sports</i></h1>
@@ -85,7 +85,7 @@ while(r.next()){
 <div class="q">
 <p><%out.println(r.getString("Username"));%>     <%out.println(r.getString("Topic"));%></p>
 <h3><%out.println(r.getString("Question"));%></h3>
-<a href="SignIn.jsp">Write an Answer</a>
+<a href="ans.jsp">Write an Answer</a>
 </div>
 <%
 }

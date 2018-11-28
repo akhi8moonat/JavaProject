@@ -6,8 +6,6 @@
 package Project;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,19 +18,14 @@ import javax.servlet.http.HttpSession;
  */
 public class Session2 extends HttpServlet {
     
+    @Override
     public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
     {
-         response.setContentType("text/html");  
-            PrintWriter out=response.getWriter();  
-              
-            
-            request.getRequestDispatcher("welc.jsp").include(request, response); 
+            response.setContentType("text/html");  
             HttpSession session=request.getSession();  
+            session.removeAttribute("uname");
             session.invalidate();  
-              
-             response.sendRedirect("Signout.jsp");  
-              
-            out.close();     
+            response.sendRedirect("Signout.jsp");     
     }
 
 }

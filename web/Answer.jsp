@@ -21,12 +21,11 @@ Statement statement = null;
 ResultSet r = null;
 %>
 <html>
-    <title>Sports</title>
+    <title>Answers</title>
     <style>
         body{
-            background-image: url("sport1.jpg");
+            background-image: url("blue.jpg");
             background-repeat: no-repeat;
-            
         }
         .tech{
              overflow: hidden;
@@ -41,6 +40,7 @@ ResultSet r = null;
             color:red;
             font-size:30px;
             text-align: center;
+            font-family:"Times New Roman";
         }
         p
 {
@@ -69,23 +69,24 @@ a
     font-size:15px;
 }
     </style>
-    <%@include file="Header.jsp"%>
+    <%@include file="Header2.jsp"%>
     <body>
         <div class="tech">
-        <h1><i>Sports</i></h1>
+        <h1><i>Answers to Questions Asked</i></h1>
         </div>
    <%
 try{ 
 con = DriverManager.getConnection(conUrl,"root", "");
 statement=con.createStatement();
-String sql ="SELECT * FROM ask where Topic='Sports'";
+String sql ="SELECT * FROM answer";
 r = statement.executeQuery(sql);
 while(r.next()){
 %>
 <div class="q">
-<p><%out.println(r.getString("Username"));%>     <%out.println(r.getString("Topic"));%></p>
+    <p><%out.println(r.getString("Username"));%></p>
 <h3><%out.println(r.getString("Question"));%></h3>
-<a href="SignIn.jsp">Write an Answer</a>
+<p>Answer:</p>
+<h3><%out.println(r.getString("Answer"));%></h3>
 </div>
 <%
 }

@@ -39,7 +39,7 @@ public class forgotServlet extends HttpServlet {
             // out.println(result);
             if(result.equals("login successfull"))
             {
-                 RequestDispatcher r=request.getRequestDispatcher("welc.jsp");  
+                 RequestDispatcher r=request.getRequestDispatcher("change.jsp");  
                     r.include(request, response); 
             }
             else if(result.equals("not verified"))

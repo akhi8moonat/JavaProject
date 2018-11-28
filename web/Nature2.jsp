@@ -21,28 +21,9 @@ Statement statement = null;
 ResultSet r = null;
 %>
 <html>
-    <title>Sports</title>
+    <title>Environment</title>
     <style>
-        body{
-            background-image: url("sport1.jpg");
-            background-repeat: no-repeat;
-            
-        }
-        .tech{
-             overflow: hidden;
-  background-color: white;
-  width:15%;
-  margin:0 auto; 
-  padding:10px;
-  border-radius: 7px;
-  margin-top: 7px;
-        }
-        h1{
-            color:red;
-            font-size:30px;
-            text-align: center;
-        }
-        p
+p
 {
     text-align: left;
     color:grey;
@@ -68,24 +49,43 @@ a
     color:grey;
     font-size:15px;
 }
+        body{
+            background-image: url("nature1.jpg");
+            background-repeat: no-repeat;
+            
+        }
+        .heal{
+             overflow: hidden;
+  background-color: white;
+  width:20%;
+  margin:0 auto; 
+  padding:10px;
+  border-radius: 8px;
+  margin-top: 8px;
+        }
+        h1{
+            color:darkolivegreen;
+            font-size:30px;
+            text-align: center;
+        }
     </style>
-    <%@include file="Header.jsp"%>
+    <%@include file="Header2.jsp"%>
     <body>
-        <div class="tech">
-        <h1><i>Sports</i></h1>
+        <div class="heal">
+        <h1>Environment</h1>
         </div>
    <%
 try{ 
 con = DriverManager.getConnection(conUrl,"root", "");
 statement=con.createStatement();
-String sql ="SELECT * FROM ask where Topic='Sports'";
+String sql ="SELECT * FROM ask where Topic='Environment'";
 r = statement.executeQuery(sql);
 while(r.next()){
 %>
 <div class="q">
 <p><%out.println(r.getString("Username"));%>     <%out.println(r.getString("Topic"));%></p>
 <h3><%out.println(r.getString("Question"));%></h3>
-<a href="SignIn.jsp">Write an Answer</a>
+<a href="ans.jsp">Write an Answer</a>
 </div>
 <%
 }

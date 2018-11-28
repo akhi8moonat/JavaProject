@@ -68,6 +68,34 @@
         <servlet-name>Session3</servlet-name>
         <servlet-class>Project.Session3</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ASK</servlet-name>
+        <servlet-class>Project.ASK</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ASKQ</servlet-name>
+        <servlet-class>ASKQ</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Ques</servlet-name>
+        <servlet-class>Project.Ques</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ASKQues</servlet-name>
+        <servlet-class>Project.ASKQues</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Search2</servlet-name>
+        <servlet-class>Project.Search2</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>feedback</servlet-name>
+        <servlet-class>Project.feedback</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Answer</servlet-name>
+        <servlet-class>Project.Answer</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProjectServlet</servlet-name>
         <url-pattern>/ProjectServlet</url-pattern>
@@ -135,6 +163,34 @@
     <servlet-mapping>
         <servlet-name>Session3</servlet-name>
         <url-pattern>/Session3</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ASK</servlet-name>
+        <url-pattern>/ASK</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ASKQ</servlet-name>
+        <url-pattern>/ASKQ</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Ques</servlet-name>
+        <url-pattern>/Ques</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ASKQues</servlet-name>
+        <url-pattern>/ASKQues</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Search2</servlet-name>
+        <url-pattern>/Search2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>feedback</servlet-name>
+        <url-pattern>/feedback</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Answer</servlet-name>
+        <url-pattern>/Answer</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

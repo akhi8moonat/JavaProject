@@ -37,12 +37,18 @@ h2{
 </style>
 </head>
 <body>
+     <% response.setHeader("cache-Control","no-cache,no-store,must-revalidate");
+    if(session.getAttribute("uname")==null)
+    {
+    response.sendRedirect("SignIn.jsp");
+    }
+    %>
 <div class="topnav">
-    <a href="welcome.jsp" class="logo"><font color="white">QuestionMe</font></a>
-  <a href="welcome.jsp">Home</a>
+    <a href="wel.jsp" class="logo"><font color="white">QuestionMe</font></a>
+  <a href="wel.jsp">Home</a>
   <a href="About2.jsp">About</a>
-  <a href="ans.jsp">Answer</a>
   <a href="Contact.jsp">Contact Us</a>
+  <a href="Answer.jsp">Answers</a>
   <a href="Ask.jsp">Ask Question</a>
   <a href="profile.jsp">Profile</a>
   <a href="Session2">Logout</a>

@@ -3,6 +3,13 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.Connection;
+import java.lang.*;
+import java.sql.*;
+import java.util.*;
 
 public final class Nature_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -49,6 +56,26 @@ public final class Nature_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+
+String driverName = "com.mysql.jdbc.Driver";
+String conUrl = "jdbc:mysql://localhost:3306/registerdata";
+try {
+Class.forName(driverName);
+} catch (ClassNotFoundException e) {
+e.printStackTrace();
+}
+
+Connection con = null;
+Statement statement = null;
+ResultSet r = null;
+
+      out.write("\n");
       out.write("<html>\n");
       out.write("    <title>Environment</title>\n");
       out.write("    <style>\n");
@@ -64,6 +91,7 @@ public final class Nature_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  margin:0 auto; \n");
       out.write("  padding:10px;\n");
       out.write("  border-radius: 8px;\n");
+      out.write("  margin-top: 8px;\n");
       out.write("        }\n");
       out.write("        h1{\n");
       out.write("            color:darkolivegreen;\n");
@@ -126,8 +154,40 @@ public final class Nature_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div class=\"heal\">\n");
       out.write("        <h1>Environment</h1>\n");
       out.write("        </div>\n");
-      out.write("    </body>\n");
-      out.write("</html>");
+      out.write("   ");
+
+try{ 
+con = DriverManager.getConnection(conUrl,"root", "");
+statement=con.createStatement();
+String sql ="SELECT * FROM ask where Topic='Environment'";
+r = statement.executeQuery(sql);
+while(r.next()){
+
+      out.write("\n");
+      out.write("<div class=\"q\">\n");
+      out.write("<p>");
+out.println(r.getString("Username"));
+      out.write("     ");
+out.println(r.getString("Topic"));
+      out.write("</p>\n");
+      out.write("<h3>");
+out.println(r.getString("Question"));
+      out.write("</h3>\n");
+      out.write("<a href=\"SignIn.jsp\">Write an Answer</a>\n");
+      out.write("</div>\n");
+
+}
+
+      out.write("\n");
+      out.write("</body>\n");
+      out.write("</html>\n");
+
+}
+catch(Exception ex) 
+{
+    ex.getMessage();
+}
+
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

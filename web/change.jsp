@@ -1,13 +1,13 @@
 <%-- 
-    Document   : Ask
-    Created on : Nov 21, 2018, 8:03:34 PM
+    Document   : Forgot
+    Created on : Nov 16, 2018, 11:02:45 AM
     Author     : Akhilesh
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
     <head>
-   <title>Ask Question</title>
+   <title>Verification</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
     body {
@@ -78,33 +78,27 @@ input[type=submit]:hover {
     width:40%;
     margin:0 auto;
 }
-textarea {
-    width: 70%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    border-color: lightgrey;
-    margin-bottom: 16px;
-    resize: vertical;
+label
+{
+    color:darkgray;
 }
 </style>
 </head>
 <body>
-    <%@include file="Header2.jsp"%>
+    <%@include file="Header.jsp"%>
     <br>
     <br>
     <br>
 <div class="container">
-    <center><h3><i>Ask Question</i></h3></center>
-    <center><form action="AskServlet" method="post">
-      <input type="text" name="user" placeholder="Username" required>
-      <input type="text" name="topic" placeholder="Enter related topic" required>
+    <center><h3><i>Reset Password</i></h3></center>
+    <center><form action="Changepass.jsp" method="post">
+      <input type="password" name="curr" placeholder="Current Password" required>
     <br>
-      <textarea id="subject" name="que" placeholder="Write your Question here.." style="height:100px"></textarea>
+      <input type="password" name="new" placeholder="New Password" required>
+    <br>
+      <input type="password" name="confirm" placeholder="Confirm New Password" required>
       <br>
-      <input type="submit" value="Post Question">
+      <input type="submit" value="Reset Password">
         </form></center>
 </div>
 </body>

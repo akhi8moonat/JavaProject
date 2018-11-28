@@ -6,38 +6,37 @@
 package Project;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Akhilesh
- */
-public class feedbackServlet extends HttpServlet {
+ */ 
+public class Answer extends HttpServlet {
     
     @Override
     public void doPost(HttpServletRequest req,HttpServletResponse res) throws IOException
     {
-        PrintWriter out=res.getWriter();
-        String firstname = req.getParameter("fname");
-        String lastname = req.getParameter("lname");
-        String subject= req.getParameter("subject");
+        String answer= req.getParameter("ans");
         try {
             String ss="jdbc:mysql://localhost:3306/registerdata";
             Class.forName("com.mysql.jdbc.Driver");
             Connection con=DriverManager.getConnection(ss,"root","");
             Statement s=con.createStatement();
-                  String query="insert into Feedback values('"+firstname+"','"+lastname+"','"+subject+"')";             
-                    int count=s.executeUpdate(query);
-                    RequestDispatcher rd=req.getRequestDispatcher("Home.jsp");  
-                    rd.include(req, res); 
-                    out.print("<body><center><b><font color='blue'>Thanks for your Feedback</font></b></center></body>");
+              HttpSession se=req.getSession();
+                String q =(String)se.getAttribute("ques");
+                String u=(String)se.getAttribute("user");
+                  String query="insert into answer values('"+u+"','"+q+"','"+answer+"')";             
+                 int count=s.executeUpdate(query);
+                 res.sendRedirect("wel.jsp");  
+                // RequestDispatcher rd=req.getRequestDispatcher("wel.jsp");  
+                 //rd.include(req, res);
         } catch (Exception ex ) {
             ex.getMessage();
         }

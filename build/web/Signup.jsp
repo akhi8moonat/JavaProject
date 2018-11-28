@@ -139,8 +139,9 @@ label
     <br>
        <select name="que">
         <option value="q1">Security Question</option>   
-      <option value="q1">What is your first school ?</option>
-      <option value="q2">What is your first pet ?</option>
+      <option value="q1">What was your first school's name ?</option>
+      <option value="q2">What was your first pet's name ?</option>
+      <option value="q2">What is your nickname ?</option>
     </select>
       <input type="text" name="ans" placeholder="Enter Answer" required>
       <br>

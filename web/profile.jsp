@@ -121,7 +121,7 @@ h1{
     font-family: "Times New Roman" ;
 }
             </style>
-    <%@include file="Header2.jsp"%>        
+    <%@include file="Header2.jsp"%>      
     </head>
     
     <body>

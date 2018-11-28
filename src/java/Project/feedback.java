@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Akhilesh
  */
-public class RegisterServlet extends HttpServlet {
+public class feedback extends HttpServlet {
     
     @Override
     public void doPost(HttpServletRequest req,HttpServletResponse res) throws IOException
@@ -27,23 +27,17 @@ public class RegisterServlet extends HttpServlet {
         PrintWriter out=res.getWriter();
         String firstname = req.getParameter("fname");
         String lastname = req.getParameter("lname");
-        int age = Integer.parseInt(req.getParameter("age"));
-        String gender = req.getParameter("gen");
-        String username= req.getParameter("uname");
-        String password= req.getParameter("pwd");
-        String email= req.getParameter("eml");
-        String question= req.getParameter("que");
-        String answer= req.getParameter("ans");
+        String subject= req.getParameter("subject");
         try {
             String ss="jdbc:mysql://localhost:3306/registerdata";
             Class.forName("com.mysql.jdbc.Driver");
             Connection con=DriverManager.getConnection(ss,"root","");
             Statement s=con.createStatement();
-                  String query="insert into register values('"+firstname+"','"+lastname+"',"+age+",'"+gender+"','"+username+"','"+password+"','"+email+"','"+question+"','"+answer+"')";             
+                  String query="insert into Feedback values('"+firstname+"','"+lastname+"','"+subject+"')";             
                     int count=s.executeUpdate(query);
-                    RequestDispatcher rd=req.getRequestDispatcher("Home.jsp");  
+                    RequestDispatcher rd=req.getRequestDispatcher("wel.jsp");  
                     rd.include(req, res); 
-                     out.print("<body><center><b><font color='blue'>Registered Successfully</font></b></center></body>");                 
+                    out.print("<body><center><b><font color='blue'>Thanks for your Feedback</font></b></center></body>");
         } catch (Exception ex ) {
             ex.getMessage();
         }

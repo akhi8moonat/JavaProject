@@ -82,7 +82,7 @@ input[type=submit]:hover {
                 <b>For any queries related the application please feel free to drop a mail at questionme304@gmail.com</b>
             </p>
                <h3>Your Valuable Feedback Means Alot</h3>
-               <center><form action="feedbackServlet" method="post">
+               <center><form action="feedback" method="post">
     <input type="text" name="fname" placeholder="Enter your First Name" required>
     <input type="text" name="lname" placeholder="Enter your Last Name" required>
     <br>

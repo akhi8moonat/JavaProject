@@ -99,7 +99,7 @@ textarea {
 <div class="container">
     <center><h3><i>Ask Question</i></h3></center>
     <center><form action="AskServlet" method="post">
-      <input type="text" name="uname" placeholder="Username" required>
+      <input type="text" name="user" placeholder="Username" required>
       <input type="text" name="topic" placeholder="Enter related topic" required>
     <br>
       <textarea id="subject" name="que" placeholder="Write your Question here.." style="height:100px"></textarea>

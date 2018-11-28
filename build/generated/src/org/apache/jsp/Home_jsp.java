@@ -3,6 +3,13 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.Connection;
+import java.lang.*;
+import java.sql.*;
+import java.util.*;
 
 public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -49,6 +56,28 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+
+String driverName = "com.mysql.jdbc.Driver";
+String conUrl = "jdbc:mysql://localhost:3306/registerdata";
+try {
+Class.forName(driverName);
+} catch (ClassNotFoundException e) {
+e.printStackTrace();
+}
+
+Connection con = null;
+Statement statement = null;
+ResultSet r = null;
+
+      out.write("\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
       out.write("<style>\n");
       out.write("    input[type=text]\n");
       out.write("{\n");
@@ -102,9 +131,40 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  font-family: \"Times New Roman\";\n");
       out.write("  width:80%;\n");
       out.write("}\n");
+      out.write("h4\n");
+      out.write("{\n");
+      out.write("    font-family: \"Times New Roman\";\n");
+      out.write("    color:blue;\n");
+      out.write("    font-size: 20px;\n");
+      out.write("}\n");
+      out.write("p\n");
+      out.write("{\n");
+      out.write("    text-align: left;\n");
+      out.write("    color:grey;\n");
+      out.write("    font-family: \"Times New Roman\";\n");
+      out.write("    font-size:18px;\n");
+      out.write("}\n");
+      out.write(".q\n");
+      out.write("{\n");
+      out.write("    background-color: white;\n");
+      out.write("    width:50%;\n");
+      out.write("    margin:0 auto;\n");
+      out.write("    text-align:left;\n");
+      out.write("}\n");
+      out.write("h3\n");
+      out.write("{\n");
+      out.write(" color:black;\n");
+      out.write(" font-family: \"Times New Roman\";\n");
+      out.write(" font-size:20px;\n");
+      out.write("}\n");
+      out.write("a\n");
+      out.write("{\n");
+      out.write("    text-decoration: none;\n");
+      out.write("    color:grey;\n");
+      out.write("    font-size:15px;\n");
+      out.write("}\n");
       out.write("</style>\n");
-      out.write("</head>\n");
-      out.write("<body>\n");
+      out.write("    </head>\n");
       out.write("    ");
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
@@ -155,7 +215,8 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</div>\n");
       out.write("    \n");
       out.write("</html>");
-      out.write("\n");
+      out.write(" \n");
+      out.write("<body>\n");
       out.write("    <br>\n");
       out.write("<center><form action=\"Search1\" method=\"post\">\n");
       out.write("        <input type=\"text\" name=\"search\" placeholder=\"Search Keywords\">\n");
@@ -170,7 +231,39 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <a href=\"Engg.jsp\">Engineering</a>\n");
       out.write("            <a href=\"automob.jsp\">Automobiles</a>\n");
       out.write("        </div>\n");
-      out.write("</html>");
+
+try{ 
+con = DriverManager.getConnection(conUrl,"root", "");
+statement=con.createStatement();
+String sql ="select * from ask";
+r = statement.executeQuery(sql);
+while(r.next()){
+
+      out.write("\n");
+      out.write("<div class=\"q\">\n");
+      out.write("<p>");
+out.println(r.getString("Username"));
+      out.write("     ");
+out.println(r.getString("Topic"));
+      out.write("</p>\n");
+      out.write("<h3>");
+out.println(r.getString("Question"));
+      out.write("</h3>\n");
+      out.write("<a href=\"SignIn.jsp\">Write an Answer</a>\n");
+      out.write("</div>\n");
+
+}
+
+      out.write("\n");
+      out.write("</body>\n");
+      out.write("</html>\n");
+
+}
+catch(Exception ex) 
+{
+    ex.getMessage();
+}
+
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
