@@ -27,8 +27,9 @@
     padding: 3%;
     margin-top: 3%;
     margin-bottom: 3%;
-    border-radius: 0.5rem;
+    border-radius: 2px;
     background: #fff;
+    box-shadow:3px 3px 5px 6px #ccc;
 }
 .profile-img{
     text-align: center;
@@ -36,16 +37,6 @@
 .profile-img img{
     width: 70%;
     height: 100%;
-}
-.profile-img .file {
-    position: relative;
-    overflow: hidden;
-    margin-top: -20%;
-    width: 50%;
-    border: none;
-    border-radius: 0;
-    font-size: 15px;
-    background: #212529b8;
 }
 .profile-img .file input {
     position: absolute;
@@ -58,15 +49,6 @@
 }
 .profile-head h6{
     color: #0062cc;
-}
-.profile-edit-btn{
-    border: none;
-    border-radius: 1.5rem;
-    width: 70%;
-    padding: 2%;
-    font-weight: 600;
-    color: #6c757d;
-    cursor: pointer;
 }
 .proile-rating{
     font-size: 12px;

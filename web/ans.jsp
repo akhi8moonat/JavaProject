@@ -11,9 +11,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
     body {
-  background-image: url("blue.jpg");
+  background-color:white;
 }
-h3{
+p{
     color:#000066;
     font-size:25px;
     font-family: "Times New Roman" ;
@@ -38,6 +38,7 @@ input[type=submit]:hover {
     padding: 10px;
     width:40%;
     margin:0 auto;
+    box-shadow:3px 3px 5px 6px #ccc;
 }
 textarea {
     width: 70%;
@@ -58,7 +59,7 @@ textarea {
     <br>
     <br>
 <div class="container">
-    <center><h3><i>Answer Here</i></h3></center>
+    <center><p><i>Answer Here</i></p></center>
     <center><form action="Answer" method="post">
       <textarea id="subject" name="ans" placeholder="Write your Answer here.." style="height:100px"></textarea>
       <br>

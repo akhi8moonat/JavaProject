@@ -12,9 +12,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
     body {
-  background-image: url("blue.jpg");
+  background-color:white;
 }
-h3{
+p{
     color:#000066;
     font-size:30px;
     font-family: "Times New Roman" ;
@@ -105,11 +105,12 @@ input[type=submit]:hover {
     background-color: darkcyan;
 }
 .container {
-    border-radius: 5px;
+    border-radius: 1px;
     background-color: white;
     padding: 10px;
     width:50%;
     margin:0 auto;
+    box-shadow:3px 3px 5px 6px #ccc;
 }
 label
 {
@@ -123,7 +124,7 @@ label
     <br>
     <br>
 <div class="container">
-    <center><h3><i>Register Here</i></h3></center>
+    <center><p><i>Register Here</i></p></center>
     <center><form action="RegisterServlet" method="post">
       <input type="text" name="fname" placeholder="Enter your First Name" required
       <br>

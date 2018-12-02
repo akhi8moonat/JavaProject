@@ -7,7 +7,6 @@
 <style>
 body {
     margin:0;
-  background-color: whitesmoke;
 }
 h2{
     color:#B00000;
@@ -16,7 +15,8 @@ h2{
 }
 .topnav {
   overflow: hidden;
-  background-color:#871F09;
+  background-color:white;
+   box-shadow: 0 8px 6px -6px #ccc;
 }
 .topnav a.logo {
   font-size: 22px;
@@ -24,21 +24,21 @@ h2{
 }
 .topnav a {
   float: left;
-  color: whitesmoke;
+  color: black;
   text-align: center;
   padding:10px 12px;
   text-decoration: none;
   font-size: 21px;
 }
 .topnav a:hover {
-  background-color: #ff3333;
+  background-color: red;
   color: white;
 }
 </style>
 </head>
 <body>
 <div class="topnav">
-    <a href="Home.jsp" class="logo"><font color="white">QuestionMe</font></a>
+    <a href="Home.jsp" class="logo"><font color="red">QuestionMe</font></a>
   <a href="Home.jsp">Home</a>
   <a href="About.jsp">About</a>
   <a href="ContactUs.jsp">Contact Us</a>

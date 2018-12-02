@@ -11,9 +11,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
     body {
-  background-image: url("blue.jpg");
+  background-color:white;
 }
-h3{
+p{
     color:#000066;
     font-size:25px;
     font-family: "Times New Roman" ;
@@ -72,11 +72,12 @@ input[type=submit]:hover {
     background-color: darkcyan;
 }
 .container {
-    border-radius: 5px;
+    border-radius: 1px;
     background-color: white;
     padding: 10px;
     width:40%;
     margin:0 auto;
+    box-shadow:3px 3px 5px 6px #ccc;
 }
 label
 {
@@ -90,7 +91,7 @@ label
     <br>
     <br>
 <div class="container">
-    <center><h3><i>Reset Password</i></h3></center>
+    <center><p><i>Reset Password</i></p></center>
     <center><form action="Changepass.jsp" method="post">
       <input type="password" name="curr" placeholder="Current Password" required>
     <br>

@@ -11,11 +11,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=0">
 <style>
 body {
-  background-image: url("blue.jpg");
+  background-color:white;
 }
-h1{
+h4{
     color:#000066;
-    font-size:40px;
+    font-size:35px;
 }
 .container h3
 {
@@ -36,7 +36,8 @@ p
   width:60%;
   margin:0 auto; 
   padding:18px;
-  border-radius: 20px;
+  border-radius: 3px;
+  box-shadow:3px 3px 5px 6px #ccc;
 }
 input[type=text]{
     width: 40%;
@@ -66,7 +67,6 @@ input[type=submit] {
     padding: 12px 20px;
     border-radius: 4px;
     border:none;
-    align:center;
     cursor: pointer;
 }
 
@@ -76,13 +76,13 @@ input[type=submit]:hover {
 </style>
  <%@include file="Header.jsp"%>
     <body>
-        <center><h1><i>Contact Us</i></h1></center>
+        <center><h4><i>Contact Us</i></h4></center>
         <div class="container">
             <p>
                 <b>For any queries related the application please feel free to drop a mail at questionme304@gmail.com</b>
             </p>
                <h3>Your Valuable Feedback Means Alot</h3>
-               <center><form action="feedbackServlet" method="post">
+               <center><form action="feedback" method="post">
     <input type="text" name="fname" placeholder="Enter your First Name" required>
     <input type="text" name="lname" placeholder="Enter your Last Name" required>
     <br>

@@ -13,10 +13,11 @@
     body {
   background-image: url("blue.jpg");
 }
-h3{
+p{
     color:#000066;
     font-size:25px;
     font-family: "Times New Roman" ;
+    text-align: center;
 }
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
@@ -72,11 +73,12 @@ input[type=submit]:hover {
     background-color: darkcyan;
 }
 .container {
-    border-radius: 5px;
+    border-radius: 1px;
     background-color: white;
     padding: 10px;
     width:40%;
     margin:0 auto;
+    box-shadow:3px 3px 5px 6px #ccc;
 }
 textarea {
     width: 70%;
@@ -97,7 +99,7 @@ textarea {
     <br>
     <br>
 <div class="container">
-    <center><h3><i>Ask Question</i></h3></center>
+    <p><i>Ask Question</i></p>
     <center><form action="AskServlet" method="post">
       <input type="text" name="user" placeholder="Username" required>
       <input type="text" name="topic" placeholder="Enter related topic" required>

@@ -30,12 +30,19 @@ p
     font-family: "Times New Roman";
     font-size:18px;
 }
+ h4{
+            color:#000066;
+            font-size:30px;
+            text-align: center;
+            font-family:"Times New Roman";
+        }
 .q
 {
     background-color: white;
     width:50%;
     margin:0 auto;
     text-align:left;
+    box-shadow:3px 2px 3px 2px #ccc;
 }
 h3
 {
@@ -50,18 +57,8 @@ a
     font-size:15px;
 }
         body{
-            background-image: url("nature1.jpg");
-            background-repeat: no-repeat;
+            background-color:white;
             
-        }
-        .heal{
-             overflow: hidden;
-  background-color: white;
-  width:20%;
-  margin:0 auto; 
-  padding:10px;
-  border-radius: 8px;
-  margin-top: 8px;
         }
         h1{
             color:darkolivegreen;
@@ -71,9 +68,7 @@ a
     </style>
     <%@include file="Header.jsp"%>
     <body>
-        <div class="heal">
-        <h1>Environment</h1>
-        </div>
+        <h4>Environment</h4>
    <%
 try{ 
 con = DriverManager.getConnection(conUrl,"root", "");

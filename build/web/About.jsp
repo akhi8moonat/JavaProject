@@ -1,8 +1,3 @@
-<%-- 
-    Document   : About
-    Created on : Nov 16, 2018, 10:18:16 AM
-    Author     : Akhilesh
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -12,18 +7,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=0">
 <style>
     body {
-  background-image: url("blue.jpg");
+  background-color:white;
 }
-h1{
+h4{
     color:#000066;
-    font-size:40px;
+    font-size:35px;
     font-family: "Times New Roman" ;
 }
 p
 {
      font-family:Times Roman; 
      font-size:20px;
-     color:darkcyan;
+     color:black;
      text-align: center;
 }
 .container {
@@ -32,14 +27,14 @@ p
   width:60%;
   margin:0 auto; 
   padding:18px;
-  border-radius: 8px;
+  border-radius: 2px;
+  box-shadow:3px 3px 5px 6px #ccc;
 }
 </style>
   <%@include file="Header.jsp"%>
     <body>
-        <center><h1><i>About Us</i></h1></center>
+        <center><h4><i>About Us</i></h4></center>
         <div class="container">
-        
             <p>
                 This is a Question-Answer based web application <br>
               for people who would like to gain knowledge about any topic in general.

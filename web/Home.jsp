@@ -58,10 +58,11 @@ input[type=submit]:hover {
   border-radius:4px;
   border-color: white;
   float:left;
+ box-shadow:3px 3px 4px 3px #ccc;
 }
  .c1 a:hover
 {
-    background-color: lightcoral;
+    background-color: red;
     color:white;
 }
 .c1 a {
@@ -94,6 +95,7 @@ p
     width:50%;
     margin:0 auto;
     text-align:left;
+    box-shadow:3px 2px 3px 2px #ccc;
 }
 h3
 {

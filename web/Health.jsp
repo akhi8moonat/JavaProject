@@ -24,24 +24,21 @@ ResultSet r = null;
     <title>Health</title>
     <style>
         body{
-            background-image: url("medic1.jpg");
+            background-color:white;
             background-repeat: no-repeat;
             
-        }
-        .heal{
-             overflow: hidden;
-  background-color: white;
-  width:20%;
-  margin:0 auto; 
-  padding:10px;
-  border-radius: 8px;
-  margin-top: 8px;
         }
         h1{
             color:#000066;
             font-size:30px;
             text-align: center;
             font-family: "Times New Roman";
+        }
+         h4{
+            color:#000066;
+            font-size:30px;
+            text-align: center;
+            font-family:"Times New Roman";
         }
 p
 {
@@ -56,6 +53,7 @@ p
     width:50%;
     margin:0 auto;
     text-align:left;
+    box-shadow:3px 2px 3px 2px #ccc;
 }
 h3
 {
@@ -72,9 +70,7 @@ a
     </style>
     <%@include file="Header.jsp"%>
     <body>
-        <div class="heal">
-        <h1>Health</h1>
-        </div>
+        <h4>Health</h4>
      <%
 try{ 
 con = DriverManager.getConnection(conUrl,"root", "");

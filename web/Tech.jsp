@@ -24,19 +24,15 @@ ResultSet r = null;
     <title>Technology</title>
     <style>
         body{
-            background-image: url("t7.jpg");
-            background-repeat: no-repeat;
+            background-color:white;
             
         }
-        .tech{
-             overflow: hidden;
-  background-color: white;
-  width:15%;
-  margin:0 auto; 
-  padding:10px;
-  border-radius: 7px;
-  margin-top: 7px;
-        }
+         h4{
+            color:#000066;
+            font-size:30px;
+            text-align: center;
+            font-family:"Times New Roman";
+                }
         h1{
             color:red;
             font-size:30px;
@@ -56,6 +52,7 @@ ResultSet r = null;
     width:50%;
     margin:0 auto;
     text-align:left;
+    box-shadow:3px 2px 3px 2px #ccc;
 }
 h3
 {
@@ -72,9 +69,7 @@ a
     </style>
     <%@include file="Header.jsp"%>
     <body>
-        <div class="tech">
-        <h1><i>Technology</i></h1>
-        </div>
+        <h4><i>Technology</i></h4>
     <%
 try{ 
 con = DriverManager.getConnection(conUrl,"root", "");

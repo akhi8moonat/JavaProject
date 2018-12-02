@@ -58,10 +58,11 @@ input[type=submit]:hover {
   border-radius:4px;
   border-color: white;
   float:left;
+  box-shadow:3px 3px 4px 3px #ccc;
 }
  .c1 a:hover
 {
-    background-color: lightcoral;
+    background-color: red;
     color:white;
 }
 .c1 a {
@@ -95,6 +96,7 @@ p
     width:50%;
     margin:0 auto;
     text-align:left;
+    box-shadow:3px 2px 3px 2px #ccc;
 }
 h3
 {
@@ -121,7 +123,7 @@ a
 <h4>Logged Out Successfully</h4>
 <br>
  <div class="c1">
-             <a href="wel.jsp">Feed</a>
+             <a href="Signout.jsp">Feed</a>
             <a href="Tech.jsp">Technology</a>
             <a href="Sport.jsp">Sports</a>
             <a href="Health.jsp">Health</a>
