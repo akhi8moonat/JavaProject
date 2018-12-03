@@ -61,7 +61,7 @@ a
     font-size:15px;
 }
     </style>
-    <%@include file="Header.jsp"%>
+    <%@include file="Header2.jsp"%>
     <body>
         <h4><i>Answers to Questions Asked</i></h4>
    <%

@@ -48,7 +48,7 @@ h2{
   <a href="wel.jsp">Home</a>
   <a href="About2.jsp">About</a>
   <a href="Contact.jsp">Contact Us</a>
-  <a href="Answer.jsp">Answers</a>
+  <a href="Answer2.jsp">Answers</a>
   <a href="Ask.jsp">Ask Question</a>
   <a href="profile.jsp">Profile</a>
   <a href="Session2">Logout</a>

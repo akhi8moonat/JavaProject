@@ -41,6 +41,7 @@ h2{
     <a href="Home.jsp" class="logo"><font color="red">QuestionMe</font></a>
   <a href="Home.jsp">Home</a>
   <a href="About.jsp">About</a>
+  <a href="Answer.jsp">Answers</a>
   <a href="ContactUs.jsp">Contact Us</a>
   <a href="Signup.jsp">Register</a>
   <a href="SignIn.jsp">Login</a>
